@@ -12,22 +12,18 @@
 
 function handValue (hand) {
 
-  parseInt('1', 1)
-  parseInt('2', 2)
-  parseInt('3', 3)
-  parseInt('4', 4)
-  parseInt('5', 5)
-  parseInt('6', 6)
-  parseInt('7', 7)
-  parseInt('8', 8)
-  parseInt('9', 9)
-  parseInt('10', 10)
 
-  let decknum = (1,2,3,4,5,6,7,8,9,10)
-  let deckint = ()
-
-
-  return;
+let total = 0;
+for (var i = 0; i < hand.length; i++) {
+  let card = hand[i];
+  if (card === 'K' || card === 'Q' || card === 'J'){
+    total += 10;
+  } else {
+    total += parseInt(card, 10);
+  }
+}
+  console.log(total);
+  return total;
 }
 
 
