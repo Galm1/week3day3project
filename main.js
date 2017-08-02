@@ -10,17 +10,29 @@
 */
 
 
-function handValue (hand) {
+function handValue(hand) {
 
 
-let total = 0;
-for (var i = 0; i < hand.length; i++) {
-  let card = hand[i];
-  if (card === 'K' || card === 'Q' || card === 'J'){
-    total += 10;
-  } else {
-    total += parseInt(card, 10);
+  let total = 0;
+  for (let i = 0; i < hand.length; i++) {
+    let card = hand[i];
+    if (card === 'K' || card === 'Q' || card === 'J') {
+      total += 10;
+    } else if (card !== 'A'){
+      total += parseInt(card, 10);
+    }
   }
+
+  for (let i = 0; i < hand.length; i++) {
+    if (hand[i] === 'A'){
+      if (total > 10){
+        total += 1;
+      }else {
+        total += 11;
+      }
+    }
+
+
 }
   console.log(total);
   return total;
